@@ -23,8 +23,9 @@ const coinFlipResultPaser = (publishPackageResult: PublishPackageResult) => {
   console.info('Active-env: ', color('green')(client.network));
 
   // === Single Package Publish ===
+  const suiBinaryPath = 'sui';
   const packagePath = path.join(__dirname, '../coin_flip');
-  const publisher = new Publisher('sui-devnet', client);
+  const publisher = new Publisher(suiBinaryPath, client);
   const publishResult = await publisher.publish(packagePath, { enforce: true, resultParser: coinFlipResultPaser});
   console.info('Publish Result:', publishResult);
 
