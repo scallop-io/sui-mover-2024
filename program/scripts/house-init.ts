@@ -27,7 +27,7 @@ const paseTxbResponse = (response: SuiTransactionBlockResponse) => {
 (async () => {
   const client = new Client({
     network: 'devnet',
-    secretKey: process.env.SECRETKE,
+    secretKey: process.env.SECRET_KEY,
   });
 
   console.info('Active-address: ', color('green')(client.wallet.address));
